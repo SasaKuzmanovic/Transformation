@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<h1><strong>This is Practical 4, Image and Sound</strong></h1>
+		<script>
+			function pageLoaded() {
+			
+				var canvas = document.getElementById("lil_canvas");
+				
+				var context = canvas.getContext("2d");
+				
+				var image = document.getElementById("moon");
+				
+				context.drawImage(image, 10, 10);
+				
+				context.translate(10,10);
+				
+				context.drawImage(image, 1025, 250, 100, 56);
+				
+				context.scale(1, 2);
+				
+				context.drawImage(image, 410, 125, 60, 55, 1025, 10, 120, 110);
+				
+				context.drawImage(image, 1030, 180, 100, 56);
+				
+				context.rotate(-Math.PI / 2);
+				context.drawImage(image,1200, 200, 320, 240);
+				
+				var playMusic = document.getElementById("music");
+				playMusic.play();
+			}
+		</script>
+	</head>
+	
+<body onLoad="pageLoaded()">
+	
+	<img src="tiger.jpg" id="moon" style="display: none;">
+	<canvas id="lil_canvas" width="1920" height="1080" style="border: blue 2 px solid;">Browser said no no to Canvas Tag</canvas>
+	<audio src="broken_angel.mp3" id="music">No audio Tag</audio>
+</body>
+</html>
